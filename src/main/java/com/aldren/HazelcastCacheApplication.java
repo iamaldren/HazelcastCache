@@ -16,10 +16,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
  * enable security where possible.
  */
 @SpringBootApplication(exclude = { SecurityAutoConfiguration.class })
-public class App 
+public class HazelcastCacheApplication
 {
     public static void main( String[] args )
     {
-        SpringApplication.run(App.class, args);
+        SpringApplication.run(HazelcastCacheApplication.class, args);
     }
 }
