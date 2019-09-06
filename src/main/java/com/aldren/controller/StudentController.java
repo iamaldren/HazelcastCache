@@ -33,7 +33,7 @@ public class StudentController {
 
     @PostMapping("/students")
     public @ResponseBody Response addStudent(@RequestBody Student student) {
-        studentService.addOrUpdate(student);
+        studentService.addOrUpdateStudent(student);
         return Response.builder()
                 .timestamp(DateFormatUtils.format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
                 .status(HttpStatus.OK.value())
@@ -45,7 +45,7 @@ public class StudentController {
 
     @PutMapping("/students")
     public @ResponseBody Response updateStudent(@RequestBody Student student) {
-        studentService.addOrUpdate(student);
+        studentService.addOrUpdateStudent(student);
         return Response.builder()
                 .timestamp(DateFormatUtils.format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
                 .status(HttpStatus.OK.value())
@@ -57,7 +57,7 @@ public class StudentController {
 
     @DeleteMapping("/students")
     public @ResponseBody Response deleteStudent(Long id) {
-        studentService.delete(id);
+        studentService.deleteStudent(id);
         return Response.builder()
                 .timestamp(DateFormatUtils.format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
                 .status(HttpStatus.OK.value())

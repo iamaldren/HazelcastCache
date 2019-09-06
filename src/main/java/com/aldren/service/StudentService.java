@@ -25,7 +25,6 @@ public class StudentService {
     @Scheduled(cron = "0 0 0,12 * * ?")
     public void evictAllCacheValues() {}
 
-    @Cacheable
     public List<Student> getStudentList() {
         System.out.println("Retrieving student list from the database...");
         return repo.findAll();
@@ -42,13 +41,13 @@ public class StudentService {
     }
 
     @CachePut(key = "#student.id")
-    public void addOrUpdate(Student student) {
+    public void addOrUpdateStudent(Student student) {
         System.out.println("Adding/Updating student in the database...");
         repo.saveAndFlush(student);
     }
 
     @CacheEvict(key = "#id")
-    public void delete(Long id) {
+    public void deleteStudent(Long id) {
         System.out.println("Deleting student in the database...");
         repo.deleteById(id);
     }
