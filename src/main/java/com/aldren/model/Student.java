@@ -3,22 +3,18 @@ package com.aldren.model;
 import lombok.Getter;
 import lombok.Setter;
 
-public class Student {
+import java.io.Serializable;
 
-    @Getter
-    @Setter
+@Getter
+@Setter
+public class Student implements Serializable {
+
     private String studentNo;
 
-    @Getter
-    @Setter
     private String firstName;
 
-    @Getter
-    @Setter
     private String lastName;
 
-    @Getter
-    @Setter
     private int age;
 
     public Student(String studentNo, String firstName, String lastName, int age) {

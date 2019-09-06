@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 @Controller
 public class StudentController {
@@ -14,7 +15,7 @@ public class StudentController {
     StudentService studentService;
 
     @GetMapping("/student/{studentNo}")
-    public Student findStudentById(@PathVariable String studentNo)
+    public @ResponseBody Student findStudentById(@PathVariable String studentNo)
     {
         System.out.println("Searching by ID  : " + studentNo);
 

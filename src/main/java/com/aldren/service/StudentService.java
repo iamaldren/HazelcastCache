@@ -20,7 +20,7 @@ public class StudentService {
             e.printStackTrace();
         }
 
-        return new Student(studentNo,"Aldren" ,"Reevers", 20);
+        return new Student(studentNo, "Aldren", "Reevers", 20);
     }
 
 }
