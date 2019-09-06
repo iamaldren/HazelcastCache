@@ -25,10 +25,9 @@ public class StudentService {
     @Scheduled(cron = "0 0 0,12 * * ?")
     public void evictAllCacheValues() {}
 
-    @Cacheable
     public List<Student> getStudentList() {
         System.out.println("Retrieving student list from the database...");
-        return repo.findAll();
+        return repo.findAllByOrderByIdDesc();
     }
 
     @Cacheable(key = "#id")

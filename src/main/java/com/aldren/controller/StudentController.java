@@ -55,8 +55,8 @@ public class StudentController {
                 .build();
     }
 
-    @DeleteMapping("/students")
-    public @ResponseBody Response deleteStudent(Long id) {
+    @DeleteMapping("/students/{id}")
+    public @ResponseBody Response deleteStudent(@PathVariable Long id) {
         studentService.deleteStudent(id);
         return Response.builder()
                 .timestamp(DateFormatUtils.format(new Date(), "yyyy-MM-dd'T'HH:mm:ss.SSSZ"))
