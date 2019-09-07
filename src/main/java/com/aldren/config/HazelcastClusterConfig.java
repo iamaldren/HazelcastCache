@@ -18,7 +18,12 @@ public class HazelcastClusterConfig {
                 .setEnabled(true)
                 .setProperty("self-registration", "true")
                 .setProperty("namespace", "hazelcast")
-                .setProperty("use-metadata-for-host-and-port", "true");
+                .setProperty("use-metadata-for-host-and-port", "true")
+                .setProperty("skip-eureka-registration-verification", "true")
+                .setProperty("use-classpath-eureka-client-props", "false")
+                .setProperty("shouldUseDns", "false")
+                .setProperty("name", "springboot-hazelcast")
+                .setProperty("serviceUrl.default", "http://localhost:8761");
         return config;
     }
 
