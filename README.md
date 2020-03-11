@@ -27,3 +27,7 @@ I am using Netflix's Eureka to detect hazelcast instances.
 
 ## TODO
 - Unit Testing
+
+## Useful Links
+- [Hazelcast Code Samples](https://github.com/hazelcast/hazelcast-code-samples/tree/master/hazelcast-integration)
+- [Hazelcast Persistence with MySQL](https://www.tvajjala.in/2014/05/hazelcast-persistence-with-mysql.html)
